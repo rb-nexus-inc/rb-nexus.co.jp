@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アルろく導入支援｜RBネクサス株式会社</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  background: #0f0f0f;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* 背景 */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #2c2c2c, transparent 40%),
+    radial-gradient(circle at 80% 30%, #1f1f1f, transparent 45%),
+    radial-gradient(circle at 50% 80%, #3a3a3a, transparent 50%);
+  animation: bgMove 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes bgMove {
+  to { transform: scale(1.1) translateY(-40px); }
+}
+
+/* マウス追従 */
+.cursor-light {
+  position: fixed;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,.08), transparent 60%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  max-width: 900px;
+  margin: auto;
+  padding: 160px 20px 120px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+header p {
+  font-size: 17px;
+  opacity: .9;
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.18);
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .6s ease;
+}
+
+.box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  background: #1a7f6b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+<div class="bg"></div>
+<div class="cursor-light"></div>
+
+<div class="wrapper">
+
+<!-- ファースト -->
+<header>
+  <h1>アルろく導入支援｜<br>現場運用まで“本当に回る形”で定着させます</h1>
+  <p>
+    導入して終わり、にはしません。<br>
+    現場で使われ、続くところまで設計・伴走します。
+  </p>
+</header>
+
+<!-- サービス説明 -->
+<section>
+<h2>アルろくとは</h2>
+<div class="box">
+<p>
+「アルろく」は、LINE WORKS上でアルコールチェックや運転日誌の記録・承認を行えるサービスです。
+</p>
+<p>
+RBネクサスでは、単なるツール導入ではなく、<br>
+<strong>運用設計・社内展開・定着まで</strong>を一貫して支援し、<br>
+現場の負担を抑えながらコンプライアンス対応を進めます。
+</p>
+</div>
+</section>
+
+<!-- 支援内容 -->
+<section>
+<h2>支援内容</h2>
+<div class="box">
+<ul>
+<li>現状ヒアリング／運用フロー設計</li>
+<li>管理者・運転者向けの使い方整理</li>
+<li>社内周知資料・マニュアル作成</li>
+<li>未実施時の対応など、定着に向けたルール整備</li>
+<li>導入後の改善・問い合わせ対応</li>
+</ul>
+</div>
+</section>
+
+<!-- 強み -->
+<section>
+<h2>RBネクサスの強み</h2>
+<div class="box">
+<ul>
+<li>上場企業案件を含む導入・運用支援の実績</li>
+<li>現場負担を考慮した「続く」運用設計</li>
+<li>営業・業務改善の知見を活かした実装力</li>
+</ul>
+</div>
+</section>
+
+<!-- 注意書き -->
+<section>
+<div class="box">
+<p class="note">
+※「アルろく for LINE WORKS」は、株式会社トリプルアイズが提供する
+クラウド型アルコールチェックサービスとして紹介されています。
+</p>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<h2>まずはご相談ください</h2>
+<div class="box cta">
+<p>
+現状の運用や課題を伺い、<br>
+最適な導入・定着プランをご提案します。
+</p>
+<a href="https://line.me/ti/p/RYBF38tvQ7">LINEで無料相談</a>
+</div>
+</section>
+
+<footer>
+© 2026 RBネクサス株式会社
+</footer>
+
+</div>
+
+<script>
+/* スクロール表示 */
+const obs = new IntersectionObserver(e=>{
+  e.forEach(i=>i.isIntersecting && i.target.classList.add("show"));
+},{threshold:.2});
+document.querySelectorAll(".box").forEach(el=>obs.observe(el));
+
+/* マウス追従 */
+const light = document.querySelector(".cursor-light");
+window.addEventListener("mousemove", e=>{
+  light.style.left = e.clientX + "px";
+  light.style.top  = e.clientY + "px";
+});
+</script>
+
+</body>
+</html>
