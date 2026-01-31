@@ -1,221 +1,198 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RBネクサス株式会社</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RBネクサス株式会社</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #222;
-      line-height: 1.7;
+<style>
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  background: #0f0f0f;
+  overflow-x: hidden;
+}
 
-      background:
-        radial-gradient(circle at 20% 20%, #2b2b2b, transparent 40%),
-        radial-gradient(circle at 80% 30%, #1f1f1f, transparent 45%),
-        radial-gradient(circle at 50% 80%, #3a3a3a, transparent 50%),
-        #0f0f0f;
-    }
+/* ===== マウス追従ライト ===== */
+.cursor-light {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity .3s ease;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 1;
-    }
+/* ===== 動く背景 ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #2c2c2c, transparent 40%),
+    radial-gradient(circle at 80% 30%, #1f1f1f, transparent 45%),
+    radial-gradient(circle at 50% 80%, #3a3a3a, transparent 50%);
+  animation: bgMove 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
 
-    body > * {
-      position: relative;
-      z-index: 2;
-    }
+@keyframes bgMove {
+  from { transform: scale(1); }
+  to { transform: scale(1.1) translateY(-40px); }
+}
 
-    header {
-      padding: 140px 20px;
-      text-align: center;
-      color: #fff;
-      background:
-        radial-gradient(circle at 30% 30%, #2c2c2c, transparent 45%),
-        radial-gradient(circle at 70% 40%, #1a1a1a, transparent 50%),
-        linear-gradient(180deg, #0b0b0b, #111);
-    }
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
 
-    header h1 {
-      font-size: 40px;
-      margin-bottom: 16px;
-    }
+header {
+  padding: 160px 20px;
+  text-align: center;
+  color: #fff;
+}
 
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-      max-width: 720px;
-      margin: 0 auto;
-    }
+header h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
 
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 20px;
+}
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 40px;
-      text-align: center;
-      color: #fff;
-    }
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+  color: #fff;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-    }
+/* ===== カード ===== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
 
-    .card,
-    .about {
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 14px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    }
+.card, .about {
+  background: #fff;
+  padding: 34px;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: .6s ease;
+}
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 20px;
-    }
+.card.show, .about.show {
+  transform: translateY(0);
+  opacity: 1;
+}
 
-    .card ul {
-      padding-left: 18px;
-      margin-top: 16px;
-    }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
 
-    .card li {
-      margin-bottom: 8px;
-    }
+/* ===== ピラティス専用 ===== */
+.pilates {
+  background: linear-gradient(135deg, #f4f7f6, #ffffff);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
-      color: #aaa;
-    }
+.pilates h3 {
+  color: #1a7f6b;
+}
 
-    /* フェードイン */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+}
+</style>
 </head>
-<body>
 
-<header class="fade-up">
+<body>
+<div class="bg"></div>
+<div class="cursor-light"></div>
+
+<div class="wrapper">
+
+<header>
   <h1>RBネクサス株式会社</h1>
-  <p>
-    デジタルと現場をつなぎ、<br>
-    事業の成長を現実にする。
-  </p>
+  <p>デジタルと現場をつなぎ、事業の成長を現実にする。</p>
 </header>
 
-<section class="fade-up">
-  <h2>事業内容</h2>
+<section>
+<h2>事業内容</h2>
 
-  <div class="services">
+<div class="services">
 
-    <div class="card fade-up">
-      <h3>営業代行・コンサルティング事業</h3>
-      <p>
-        成果に直結する営業支援を、仕組みから実行まで。
-        AI活用・戦略設計・現場実行までを一気通貫で支援します。
-      </p>
-      <ul>
-        <li>アルろく導入支援（上場企業案件対応）</li>
-        <li>AIコンサルティング</li>
-        <li>セールスコンサルティング</li>
-        <li>物販コンサルティング</li>
-      </ul>
-    </div>
+<div class="card">
+<h3>営業代行・コンサルティング</h3>
+<ul>
+<li>アルろく導入（上場企業案件）</li>
+<li>AIコンサルティング</li>
+<li>セールスコンサルティング</li>
+<li>物販コンサルティング</li>
+</ul>
+</div>
 
-    <div class="card fade-up">
-      <h3>オンラインピラティス事業</h3>
-      <p>
-        続けられることを、設計する。
-        オンライン完結型のピラティスサービスを提供しています。
-      </p>
-      <ul>
-        <li>月額制オンラインレッスン</li>
-        <li>パーソナルレッスン</li>
-      </ul>
-    </div>
+<div class="card pilates">
+<h3>オンラインピラティス</h3>
+<ul>
+<li>月額制オンライン</li>
+<li>パーソナルレッスン</li>
+</ul>
+</div>
 
-    <div class="card fade-up">
-      <h3>電気工事事業</h3>
-      <p>
-        見えない部分こそ、確実に。
-        安全性と品質を重視した電気工事を行っています。
-      </p>
-      <ul>
-        <li>電気設備工事</li>
-        <li>配線・照明工事</li>
-        <li>各種電気工事対応</li>
-      </ul>
-    </div>
+<div class="card">
+<h3>電気工事事業</h3>
+<ul>
+<li>電気設備工事</li>
+<li>配線・照明工事</li>
+</ul>
+</div>
 
-  </div>
+</div>
 </section>
 
-<section class="fade-up">
-  <h2>私たちについて</h2>
-  <div class="about">
-    <p>
-      RBネクサス株式会社は、
-      分野の異なる事業を通じて、
-      「価値と価値をつなぐこと」を目的とした会社です。
-      <br><br>
-      実行し、成果が出るところまで伴走する。
-      それが私たちのスタンスです。
-    </p>
-  </div>
+<section>
+<h2>会社概要</h2>
+<div class="about">
+<p>
+<strong>会社名：</strong>RBネクサス株式会社<br>
+<strong>代表取締役：</strong>川本 雄大<br>
+<strong>所在地：</strong><br>
+大阪府大東市新町4-21<br>
+セイワビル 2C号室
+</p>
+</div>
 </section>
 
-<section class="fade-up">
-  <h2>会社概要</h2>
-  <div class="about">
-    <p>
-      <strong>会社名：</strong>RBネクサス株式会社<br>
-      <strong>代表取締役：</strong>川本 雄大<br>
-      <strong>所在地：</strong><br>
-      〒574-0041<br>
-      大阪府大東市新町4-21<br>
-      セイワビル 2C号室
-    </p>
-  </div>
-</section>
+<footer>© 2026 RBネクサス株式会社</footer>
 
-<footer>
-  © 2026 RBネクサス株式会社
-</footer>
+</div>
 
 <script>
-  const targets = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  });
-  targets.forEach(t => observer.observe(t));
+/* スクロール表示 */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add("show"));
+},{threshold:0.2});
+document.querySelectorAll(".card,.about").forEach(el => observer.observe(el));
+
+/* マウス追従 */
+const light = document.querySelector(".cursor-light");
+window.addEventListener("mousemove", e => {
+  light.style.left = e.clientX + "px";
+  light.style.top = e.clientY + "px";
+});
 </script>
 
 </body>
