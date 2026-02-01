@@ -9,13 +9,13 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #4a2a14; /* 本文ブラウン */
-  background: #fff1e6; /* 薄オレンジ */
+  color: #4a2a14;        /* 本文ブラウン */
+  background: #fff1e6;  /* 薄オレンジ */
   line-height: 1.8;
   overflow-x: hidden;
 }
 
-/* 背景グラデーション（オレンジ寄せ） */
+/* 背景 */
 .bg {
   position: fixed;
   inset: 0;
@@ -37,7 +37,7 @@ body {
   height: 500px;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,.15), transparent 60%);
+  background: radial-gradient(circle, rgba(255,255,255,.08), transparent 60%);
   transform: translate(-50%, -50%);
   z-index: 0;
 }
@@ -50,6 +50,7 @@ body {
 header {
   padding: 160px 20px;
   text-align: center;
+  color: #5a2d0c;
   max-width: 900px;
   margin: auto;
 }
@@ -57,7 +58,6 @@ header {
 header h1 {
   font-size: 42px;
   margin-bottom: 24px;
-  color: #5a2d0c;
 }
 
 header p {
@@ -69,11 +69,6 @@ section {
   max-width: 1100px;
   margin: auto;
   padding: 90px 20px;
-  background: #f4ede7; /* セクション薄ブラウン */
-}
-
-section:nth-of-type(even) {
-  background: #fff7f0; /* 交互に薄オレンジ */
 }
 
 h2 {
@@ -84,10 +79,10 @@ h2 {
 }
 
 .card, .box {
-  background: #ffffff;
+  background: #fff;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.15);
+  box-shadow: 0 30px 60px rgba(0,0,0,.18);
   margin-bottom: 40px;
   opacity: 0;
   transform: translateY(40px);
@@ -110,27 +105,25 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 }
 
-/* ピラティス */
+/* ピラティス差別化 */
 .pilates {
-  background: linear-gradient(135deg,#f0faf7,#ffffff);
+  background: linear-gradient(135deg,#f4f7f6,#fff);
 }
 .pilates h3 {
   color: #1a7f6b;
 }
 
+/* FAQ */
+.faq p {
+  margin-bottom: 16px;
+}
+
 footer {
   text-align: center;
   padding: 50px 20px;
-  color: #8a6a55;
+  color: #aaa;
 }
-
-a {
-  color: #8a4513;
-  text-decoration: none;
-}
-a:hover {
-  opacity: .75;
-}
+a { color:#1a7f6b; text-decoration:none; }
 </style>
 </head>
 
@@ -140,6 +133,7 @@ a:hover {
 
 <div class="wrapper">
 
+<!-- 1. ファーストビュー -->
 <header>
   <h1>営業×AI×現場インフラで、成長を加速する。</h1>
   <p>
@@ -148,54 +142,129 @@ a:hover {
   </p>
 </header>
 
+<!-- 2. 私たちについて -->
 <section>
 <h2>私たちについて</h2>
 <div class="box">
-<h3>机上の理論ではなく、現場で結果が出る形に。</h3>
+<h3>机上の理論ではなく、現場で結果が出る形に落とし込む。</h3>
 <p>
-私たちは、営業・AI活用・仕組み化を実務レベルまで落とし込みます。
+私たちは、事業を伸ばすための「営業」「AI活用」「仕組み化」を、実務レベルまで分解して実装します。<br>
+同時に、オンラインピラティス、電気工事など生活に近い領域でも、安心と品質を提供します。
+</p>
+<p>
+単発のアドバイスで終わらせず、成果が継続する運用まで設計し、伴走します。
 </p>
 </div>
 </section>
 
+<!-- 3. 事業一覧 -->
 <section>
 <h2>事業一覧</h2>
+
 <div class="services">
 
 <div class="card">
-<h3>営業代行・コンサル</h3>
-<ul>
-<li>営業代行</li>
-<li>アルろく導入支援</li>
-<li>AI・物販コンサル</li>
-</ul>
+  <h3>営業代行・コンサルティング</h3>
+  <p><strong>売上をつくる。再現性をつくる。</strong></p>
+  <ul>
+    <li>営業代行（新規開拓／商談獲得／オンライン営業）</li>
+    <li>アルろく導入支援（上場企業案件あり）</li>
+    <li>AI・セールス・物販コンサルティング</li>
+  </ul>
+
+  <p>
+    <a href="aruroku.html">▶ アルろく導入支援の詳細を見る</a>
+  </p>
 </div>
+
 
 <div class="card pilates">
 <h3>オンラインピラティス</h3>
+<p><strong>体が整うと、毎日が変わる。</strong></p>
 <ul>
-<li>月額・パーソナル</li>
-<li>姿勢改善・体幹強化</li>
+<li>月額制オンライン（グループ）</li>
+<li>パーソナル（マンツーマン）</li>
+<li>姿勢改善・不調ケア・体幹強化</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>電気工事事業</h3>
+<p><strong>安心・安全・丁寧な施工。</strong></p>
 <ul>
-<li>住宅・店舗・オフィス</li>
-<li>安心・丁寧施工</li>
+<li>コンセント・照明・分電盤工事</li>
+<li>住宅・店舗・オフィス対応</li>
+<li>見積・説明・アフターまで一貫対応</li>
 </ul>
 </div>
 
 </div>
 </section>
 
+<!-- 5. 強み -->
+<section>
+<h2>選ばれる理由</h2>
+<div class="box">
+<ul>
+<li><strong>実行力：</strong>提案だけで終わらない</li>
+<li><strong>数字設計：</strong>KPIと導線を可視化</li>
+<li><strong>仕組み化：</strong>属人化を減らす</li>
+<li><strong>一気通貫：</strong>ビジネスから生活領域まで</li>
+</ul>
+</div>
+</section>
+
+<!-- 6. フロー -->
+<section>
+<h2>進め方</h2>
+<div class="box">
+<ol>
+<li>無料相談</li>
+<li>ヒアリング</li>
+<li>ご提案・お見積り</li>
+<li>実行・伴走</li>
+<li>定着・拡張</li>
+</ol>
+</div>
+</section>
+
+<!-- 7. FAQ -->
+<section>
+<h2>よくある質問</h2>
+<div class="box faq">
+<p><strong>Q. まず何を相談すればいい？</strong><br>
+A. ざっくりでOKです。</p>
+<p><strong>Q. 遠方でも対応可能？</strong><br>
+A. コンサル・ピラティスは全国対応。</p>
+<p><strong>Q. 料金は？</strong><br>
+A. 無料相談後に最適なプランをご提案します。</p>
+</div>
+</section>
+
+<!-- 8. 会社情報 -->
 <section>
 <h2>会社情報</h2>
 <div class="box">
 <p>
-<strong>RBネクサス株式会社</strong><br>
-大阪府大東市新町4-21 セイワビル2C
+<strong>会社名：</strong>RBネクサス株式会社<br>
+<strong>代表：</strong>川本 雄大<br>
+<strong>所在地：</strong>大阪府大東市新町4-21 セイワビル2C<br>
+<strong>事業内容：</strong><br>
+営業代行／AIコンサル／セールスコンサル／物販コンサル／オンラインピラティス／電気工事
+</p>
+</div>
+</section>
+
+<!-- 9. CTA -->
+<section>
+<h2>まずは無料相談から</h2>
+<div class="box">
+<p>
+現状の課題を整理し、最短距離で次の一手を決めます。<br>
+営業・AI・物販・健康・電気工事までまとめて相談可能です。
+</p>
+<p>
+<a href="https://line.me/ti/p/RYBF38tvQ7">▶ LINEで相談する</a>
 </p>
 </div>
 </section>
@@ -207,16 +276,15 @@ a:hover {
 </div>
 
 <script>
-const obs = new IntersectionObserver(e =>
-  e.forEach(i => i.isIntersecting && i.target.classList.add("show")),
-  { threshold: .2 }
-);
-document.querySelectorAll(".card,.box").forEach(el => obs.observe(el));
+/* スクロール表示 */
+const obs=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add("show")),{threshold:.2});
+document.querySelectorAll(".card,.box").forEach(el=>obs.observe(el));
 
-const light = document.querySelector(".cursor-light");
-window.addEventListener("mousemove", e => {
-  light.style.left = e.clientX + "px";
-  light.style.top = e.clientY + "px";
+/* マウス追従 */
+const light=document.querySelector(".cursor-light");
+window.addEventListener("mousemove",e=>{
+  light.style.left=e.clientX+"px";
+  light.style.top=e.clientY+"px";
 });
 </script>
 
