@@ -90,9 +90,10 @@ h2 {
 }
 /* ===== 事業一覧 背景画像 ===== */
 .service-consulting {
-  .service-consulting {
   background:
-    url("images/consulting.jpg") center / cover no-repeat !important;
+    linear-gradient(rgba(90,45,12,0.75), rgba(90,45,12,0.75)),
+    url("images/consulting.jpg") center / cover no-repeat;
+  color: #fff;
 }
 
 .service-pilates {
@@ -317,6 +318,3 @@ window.addEventListener("mousemove",e=>{
   light.style.top=e.clientY+"px";
 });
 </script>
-
-</body>
-</html>
