@@ -88,7 +88,38 @@ h2 {
   transform: translateY(40px);
   transition: .6s ease;
 }
+/* ===== 事業一覧 背景画像 ===== */
+.service-consulting {
+  background:
+    linear-gradient(rgba(90,45,12,0.75), rgba(90,45,12,0.75)),
+    url("images/consulting.jpg") center / cover no-repeat;
+  color: #fff;
+}
 
+.service-pilates {
+  background:
+    linear-gradient(rgba(40,120,100,0.7), rgba(40,120,100,0.7)),
+    url("images/pilates.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+.service-electric {
+  background:
+    linear-gradient(rgba(60,40,20,0.75), rgba(60,40,20,0.75)),
+    url("images/electric.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+/* 文字色 */
+.service-consulting h3,
+.service-pilates h3,
+.service-electric h3,
+.service-consulting a,
+.service-pilates a,
+.service-electric a {
+  color: #fff;
+}
+  
 .card.show, .box.show {
   opacity: 1;
   transform: translateY(0);
@@ -163,7 +194,7 @@ a { color:#1a7f6b; text-decoration:none; }
 
 <div class="services">
 
-<div class="card">
+<div class="card service-consulting">
   <h3>営業代行・コンサルティング</h3>
   <p><strong>売上をつくる。再現性をつくる。</strong></p>
   <ul>
@@ -178,7 +209,7 @@ a { color:#1a7f6b; text-decoration:none; }
 </div>
 
 
-<div class="card pilates">
+<div class="card pilates service-pilates">
 <h3>オンラインピラティス</h3>
 <p><strong>体が整うと、毎日が変わる。</strong></p>
 <ul>
@@ -188,7 +219,7 @@ a { color:#1a7f6b; text-decoration:none; }
 </ul>
 </div>
 
-<div class="card">
+<div class="card service-electric">
 <h3>電気工事事業</h3>
 <p><strong>安心・安全・丁寧な施工。</strong></p>
 <ul>
