@@ -14,6 +14,49 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
 }
+/* 背景画像を使う3事業だけ */
+.bg-consulting,
+.bg-pilates,
+.bg-electric {
+  position: relative;
+  color: #fff;
+  min-height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 暗幕（文字を読みやすく） */
+.bg-consulting::before,
+.bg-pilates::before,
+.bg-electric::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* 文字を前に出す */
+.bg-consulting *,
+.bg-pilates *,
+.bg-electric * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 各背景画像 */
+.bg-consulting {
+  background-image: url("images/consulting.jpg");
+}
+
+.bg-pilates {
+  background-image: url("images/pilates.jpg");
+}
+
+.bg-electric {
+  background-image: url("images/electric.jpg");
+}
 
 /* 背景 */
 .bg {
